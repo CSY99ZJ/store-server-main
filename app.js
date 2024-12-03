@@ -15,7 +15,7 @@ const error = require('./app/middleware/error');
 app.use(error);
 
 // 为静态资源请求重写url
-const rewriteUrl = require('./app/middleware/rewriteUrl');
+const rewriteUrl = require('./app/middleware/RewriteUrl');
 app.use(rewriteUrl);
 // 使用koa-static处理静态资源
 app.use(KoaStatic(staticDir));
