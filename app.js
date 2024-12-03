@@ -4,9 +4,9 @@ const KoaBody = require('koa-body');
 const Session = require('koa-session');
 const cors = require('@koa/cors'); // 引入 CORS 中间件
 
-let { Port, staticDir } = require('./config');
 
 let app = new Koa();
+
 // 启用跨域
 app.use(cors());
 
@@ -17,7 +17,8 @@ app.use(error);
 // 为静态资源请求重写url
 const rewriteUrl = require('./app/middleware/RewriteUrl');
 app.use(rewriteUrl);
-// 使用koa-static处理静态资源
+
+// 使用 koa-static 处理静态资源
 app.use(KoaStatic(staticDir));
 
 // session
@@ -42,6 +43,5 @@ app.use(KoaBody(koaBodyConfig));
 const Routers = require('./app/routers');
 app.use(Routers.routes()).use(Routers.allowedMethods());
 
-app.listen(Port, () => {
-  console.log(`服务器启动在${Port}端口`);
-});
+// 导出 Koa 的回调函数
+module.exports = app.callback();
