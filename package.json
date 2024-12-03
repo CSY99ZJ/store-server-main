@@ -1,0 +1,29 @@
+{
+  "name": "store-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "build": "echo 'No build required'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": "16.x",
+    "npm": "8.5.5"
+  },
+  "dependencies": {
+    "@koa/cors": "^5.0.0",
+    "koa": "^2.11.0",
+    "koa-body": "^4.1.1",
+    "koa-router": "^7.4.0",
+    "koa-session": "^5.12.3",
+    "koa-static": "^5.0.0",
+    "mysql": "^2.17.1",
+    "packagename": "^2.0.1",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.5"
+  }
+}
